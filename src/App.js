@@ -1,7 +1,9 @@
+import ShoppingCar from "./components/ShoppingCar";
+
 function App() {
   return (
     <div>
-     <h1>Hello world</h1>
+     <ShoppingCar/>
     </div>
   );
 }
