@@ -14,13 +14,16 @@ const ShoppingCar = () => {
     <div>
       <h1>ShoppingCar</h1>
       <h4>Products List</h4>
-      {state.products.map((produc) => (
-        <div key={produc.id} style={{border: '1px solid #202020', padding: '1rem', margin: '4px'}}>
-          <h5>{produc.name}</h5>
-          <p>${produc.price}</p>
-          <button onClick={() => handleAdd(produc)}>ADD</button>
-        </div>
-      ))}
+      <div className="grid">
+        {state.products.map((produc) => (
+          <div key={produc.id} style={{border: '1px solid #202020', padding: '1rem', margin: '4px'}}>
+            <h5>{produc.name}</h5>
+            <p>${produc.price}</p>
+            <button onClick={() => handleAdd(produc)}>ADD</button>
+          </div>
+        ))}
+        
+      </div>
 
       <hr />
       <h4>Added Products {state.car.length}</h4>
