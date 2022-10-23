@@ -4,23 +4,27 @@ export const initialState = {
   products: [
     {
       id: 1,
-      name: "Product one",
+      name: "Sony Camera",
       price: "3000",
+      img: "https://media.wired.com/photos/5b64dbe6f6d47809bff3a54e/master/w_1920%2Cc_limit/sony-rx100-SOURCE-Sony.jpg"
     },
     {
       id: 2,
-      name: "Product two",
+      name: "Monitor Gear-BenQ",
       price: "2000",
+      img: "https://media.wired.com/photos/618efdf2b535bb0d53e49c97/master/w_1600,c_limit/Gear-BenQ-PD2705Q-SOURCE-BenQ.jpg"
     },
     {
       id: 3,
-      name: "Product two",
+      name: "Usb PowerExpand-Hub",
       price: "2000",
+      img: "https://media.wired.com/photos/5e84e287798a15000821fe76/master/w_1600,c_limit/Gear-Anker-USB-C-PowerExpand-Hub-SOURCE-Anker.jpg"
     },
     {
       id: 4,
-      name: "Product two",
+      name: "Mechanical Keyborad",
       price: "2000",
+      img: "https://media.wired.com/photos/62c8962bb1c3d04cf1811483/master/w_1600,c_limit/Logitech-MX-Mechanical-Mini-SOURCE-Logitech-Gear.jpg"
     },
   ],
   car: [],
