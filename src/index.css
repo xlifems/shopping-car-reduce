@@ -14,6 +14,17 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax( 250px ,1fr));
- 
+  grid-template-columns: repeat(auto-fit,minmax( 250px ,1fr)); 
+}
+
+.card{
+  border: 1px solid rgba(32, 32, 32, 0.19);
+  padding: 1rem;
+  margin: 4px;
+}
+.card-horizontal {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }

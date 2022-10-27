@@ -9,8 +9,8 @@ import ProductCard from "./ProductCard";
 const ShoppingCar = () => {
   const [state, dispatch] = useReducer(shoppingCarReducer, initialState);
 
-  const handleAdd = useCallback((produc) => {
-    dispatch({ type: shoppingCarActions.ADD_PRODUCT, payload: produc });
+  const handleAdd = useCallback((product) => {
+    dispatch({ type: shoppingCarActions.ADD_PRODUCT, payload: product });
   }, []);
 
   return (
@@ -29,6 +29,9 @@ const ShoppingCar = () => {
 
       <hr />
       <h4>Added Products {state.car.length}</h4>
+      {state.car.map((product, index) => (
+        <ProductCard key={index} product={product} isProductCar={true}/>
+      ))}
     </div>
   );
 };
