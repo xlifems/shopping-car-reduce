@@ -13,6 +13,8 @@ const ShoppingCar = () => {
     dispatch({ type: shoppingCarActions.ADD_PRODUCT, payload: product });
   }, []);
 
+  const clearCar = () => dispatch( { type : shoppingCarActions.DEL_ALL_PRODUCTS})
+
   return (
     <div>
       <h1>ShoppingCar</h1>
@@ -29,6 +31,7 @@ const ShoppingCar = () => {
 
       <hr />
       <h4>Added Products {state.car.length}</h4>
+      <button onClick={clearCar}>Clear Car</button>
       {state.car.map((product, index) => (
         <ProductCard key={index} product={product} isProductCar={true}/>
       ))}

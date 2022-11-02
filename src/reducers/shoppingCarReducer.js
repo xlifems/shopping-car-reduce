@@ -56,7 +56,7 @@ export const shoppingCarReducer = (state, action) => {
     case shoppingCarActions.DEL_PRODUCT:
       return { ...state, car: [...state.car, action.payload] };
     case shoppingCarActions.DEL_ALL_PRODUCTS:
-      return { ...state, car: [...state.car, action.payload] };
+      return initialState;
     default:
       return state;
   }
