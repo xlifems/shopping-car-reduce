@@ -13,7 +13,15 @@ const ShoppingCar = () => {
     dispatch({ type: shoppingCarActions.ADD_PRODUCT, payload: product });
   }, []);
 
-  const clearCar = () => dispatch( { type : shoppingCarActions.DEL_ALL_PRODUCTS})
+  const clearCar = () => dispatch({ type: shoppingCarActions.CLEAR_CAR });
+
+  const deleteProduct = useCallback((product) => {
+    dispatch({ type: shoppingCarActions.DEL_PRODUCT, payload: product });
+  }, []);
+  
+  const deleteAllProducts = useCallback((product) => {
+    dispatch({ type: shoppingCarActions.DEL_ALL_PRODUCTS, payload: product });
+  }, []);
 
   return (
     <div>
@@ -33,7 +41,13 @@ const ShoppingCar = () => {
       <h4>Added Products {state.car.length}</h4>
       <button onClick={clearCar}>Clear Car</button>
       {state.car.map((product, index) => (
-        <ProductCard key={index} product={product} isProductCar={true}/>
+        <ProductCard
+          key={index}
+          product={product}
+          isProductCar={true}
+          deleteProduct={deleteProduct}
+          deleteAllProducts={deleteAllProducts}
+        />
       ))}
     </div>
   );

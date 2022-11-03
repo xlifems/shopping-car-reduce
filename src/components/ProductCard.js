@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const ProductCard = ({ product, handleAdd, isProductCar = false }) => {
+const ProductCard = ({ product, handleAdd, deleteProduct, deleteAllProducts, isProductCar = false }) => {
   console.log("render product item");
   return (
     <div className={isProductCar ? "card card-horizontal" : "card"}>
@@ -22,8 +22,8 @@ const ProductCard = ({ product, handleAdd, isProductCar = false }) => {
                 product.quantity * product.price
               }`}
           </p>
-          <button onClick={() => handleAdd(product)}>-</button>
-          <button onClick={() => handleAdd(product)}>Clear</button>
+          <button onClick={() => deleteProduct(product)}>-</button>
+          <button onClick={() => deleteAllProducts(product)}>Clear</button>
         </div>
       )}
     </div>

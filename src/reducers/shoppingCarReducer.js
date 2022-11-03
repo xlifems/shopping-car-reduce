@@ -54,8 +54,27 @@ export const shoppingCarReducer = (state, action) => {
         };
       }
     case shoppingCarActions.DEL_PRODUCT:
-      return { ...state, car: [...state.car, action.payload] };
+      if (action.payload.quantity > 1) {
+        return {
+          ...state,
+          car: state.car.map((product) =>
+            product.id === action.payload.id
+              ? { ...product, quantity: product.quantity - 1 }
+              : product
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          car: state.car.filter((product) => product.id !== action.payload.id),
+        };
+      }
     case shoppingCarActions.DEL_ALL_PRODUCTS:
+      return {
+        ...state,
+        car: state.car.filter((product) => product.id !== action.payload.id),
+      };
+    case shoppingCarActions.CLEAR_CAR:
       return initialState;
     default:
       return state;
